@@ -55,6 +55,8 @@ LOCAL_C_INCLUDES += \
 
 LOCAL_CFLAGS += -fvisibility=hidden
 
-
+ifneq ($(DEBUG_FORCE_STRICT_ALIASING),true)
+	LOCAL_CFLAGS += -fno-strict-aliasing
+endif
 
 include $(BUILD_SHARED_LIBRARY)
